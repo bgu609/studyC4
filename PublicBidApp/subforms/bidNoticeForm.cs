@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -98,7 +99,8 @@ namespace PublicBidApp.subforms
 
         private void NoticeResetBtn_Click(object sender, EventArgs e)
         {
-            bidNoticeListLoad();
+            Thread thread = new Thread(new ThreadStart(bidNoticeListLoad));
+            thread.Start();
         }
 
         private void txtRowNum_KeyPress(object sender, KeyPressEventArgs e)
@@ -111,8 +113,9 @@ namespace PublicBidApp.subforms
 
         private void bidNoticeForm_Shown(object sender, EventArgs e)
         {
+            Thread thread = new Thread(new ThreadStart(bidNoticeListLoad));
+            thread.Start();
             txtRowNum.Text = rows.ToString();
-            bidNoticeListLoad();
         }
 
         private void bidNoticeGrid_CellClick(object sender, DataGridViewCellEventArgs e)
