@@ -37,7 +37,7 @@ namespace PublicBidApp.subforms
 
             str.Append("http://apis.data.go.kr/1230000/BidPublicInfoService/getBidPblancListInfoCnstwk?inqryDiv=1");
             str.Append("&ServiceKey=7B3kIELhmtfSHmJOGjcbKZtosaD%2BT8CXxxnrP5ooi4S7NEDQN%2FWEQ%2BD51oHgTR8u3FgfyBWqkquOchmAK296jw%3D%3D");
-            str.Append("&inqryBgnDt = 202001010000");
+            str.Append("&inqryBgnDt=202001010000");
             str.Append($"&numOfRows={txtRowNum.Text}");
 
             string xml = wc.DownloadString(str.ToString());
