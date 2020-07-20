@@ -65,6 +65,7 @@ namespace BookRentalShopApp2020.subforms
                     if(reader.HasRows)
                     {
                         resultID = reader["userid"] != null ? reader["userid"].ToString() : string.Empty;
+                        Common.USERID = resultID; // 2020.07.20 12:30 추가
                         MetroMessageBox.Show(this, $"{resultID} 로그인 성공");
                     }
                     else

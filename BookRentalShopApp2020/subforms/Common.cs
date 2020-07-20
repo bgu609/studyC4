@@ -9,7 +9,9 @@ namespace BookRentalShopApp2020.subforms
 {
     class Common
     {
-        public static readonly string CONSTR = "";
+        public static string USERID = string.Empty;
+
+        public static readonly string CONSTR = "Data Source=localhost; Port=3306; database=bookrentalshop; Uid=root; Password=epfls+358471;";
 
         /// <summary>
         /// MD5 암호화 메서드

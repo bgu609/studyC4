@@ -18,6 +18,8 @@ namespace BookRentalShopApp2020
         {
             LoginForm login = new LoginForm();
             login.ShowDialog();
+
+            metroLabel1.Text = $"LOGIN : {Common.USERID}";
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
